@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= user %> Profile</title>
+    <style>
+        /* Add custom styles for the profile page here */
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 class="profile-title"><%= user %> Collection</h1>
+    <div class="images-section">
+        <h2 class="section-title">My Images</h2>
+        <ul class="image-list">
+            <% images.forEach(image => { %>
+            <li class="image-item">
+                <img src="<%= image %>" alt="<%= user %> Image">
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <div class="videos-section">
+        <h2 class="section-title">My Videos</h2>
+        <ul class="video-list">
+            <% videos.forEach(video => { %>
+            <li class="video-item">
+                <video controls>
+                    <source src="<%= video %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>
